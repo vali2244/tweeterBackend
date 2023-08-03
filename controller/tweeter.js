@@ -3,9 +3,10 @@ const Tweeter=require('../model/tweeter')
 
 exports.create_tweet=async(req,res)=>{
     try {
-
         const {TEXT,user} = req.body
+        console.log(TEXT,user)
         const new_tweet = await Tweeter.create({TEXT,user})
+        console.log(new_tweet)
         res.status(200).json({
             success:true,
         })
