@@ -4,8 +4,8 @@ const Tweeter=require('../model/tweeter')
 exports.create_tweet=async(req,res)=>{
     try {
 
-        const {Text,user} = req.body
-        const new_tweet = await Tweeter.create({Text,user})
+        const {TEXT,user} = req.body
+        const new_tweet = await Tweeter.create({TEXT,user})
         res.status(200).json({
             success:true,
         })
