@@ -20,9 +20,9 @@ exports.login_user=async(req,res)=>{
   try {
     const{email,password}=req.body
     const user=await User.find({"email":email});
-if(user.length  > 0){
-    const verify_user=await User.find({email:email,password:password })
-    if(user_verify .length >0){
+if(user.length > 0){
+    const verify_user=await User.find({"email":email,"password":password })
+    if(verify_user.length >0){
         res.status(200).json({
             success:true,verify_user,
         })
